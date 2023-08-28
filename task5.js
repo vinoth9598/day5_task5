@@ -1,4 +1,4 @@
-// 1.giben json iterate over all the for loops.
+// 1.given json iterate over all the for loops.
 let student={
     name:"vinoth",
     Age:24,
@@ -6,48 +6,42 @@ let student={
     Gender:'Male'
 }
 let detail=(JSON.stringify(student));
+let json_object=JSON.parse(detail);
+for(i=0;i<(Object.keys(json_object)).length;i++){
 
-for(i=0;i<student.length;i++){
-
-    console.log(student.name);
-    console.log(student.Age);
-    console.log(student.Department);
-    console.log(student.Gender);
+    console.log(json_object);
+    break;
 
 };
 
-let users=[];
-for(let user in detail){
-    users+=(detail[user]);
+let users=[ ];
+for(let user in (json_object)){
+    users.push(json_object [user]);
 }
 console.log(users);
 
 let string=[];
-for (let inp of detail){
-    string+=(inp);
+for (let inp of (Object.entries(json_object))){
+    string.push(inp);
 }
 console.log(string);
 
-let scores={
-    mark1:80,
-    mark2:89,
-    mark3:90,
-    mark4:85
-};
-let js=JSON.stringify(scores);
-console.log(js);
 
-let arr=Object.entries(scores);
+let arr=Object.keys(json_object);
 console.log(arr);
 
 arr.forEach(function (n){
     console.log(n);
 });
 
-arr.forEach(function(m,i){
+let arr1=Object.values(json_object);
+console.log(arr);
+arr1.forEach(function(m,i){
     console.log(i,m);
 });
 
-arr.forEach(function(l,i){
+let arr2=Object.entries(json_object);
+console.log(arr);
+arr2.forEach(function(l,i){
     console.log(l,i);
 });
